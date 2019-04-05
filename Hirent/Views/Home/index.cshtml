@@ -1,0 +1,455 @@
+﻿@model List<Hirent.Models.Product>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Republica.am | Նորություններ</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="~/img/core-img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="~/style.css">
+
+</head>
+
+<body>
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Top Header Area -->
+        @if (!Request.Browser.IsMobileDevice)
+        {
+            <div class="top-header-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12" style="margin-top: 15px;">
+                            <div class="top-header-content d-flex align-items-center justify-content-between">
+                                <!-- Logo -->
+                                <div class="logo col-sm-3">
+                                    <a href="/">
+                                        <img src="~/img/republic astxov.png" />
+                                    </a>
+                                </div>
+
+                                <div class="logo col-sm-2">
+                                    <!-- weather widget start --><a target="_blank" href="https://www.booked.net/weather/yerevan-19185"><img src="https://w.bookcdn.com/weather/picture/14_19185_1_1_ffffff_118_ffffff_000000_fc0000_0_ffffff_000000_0_6.png?scode=124&domid=w209&anc_id=15358" alt="booked.net" /></a><!-- weather widget end -->
+                                    <iframe src="http://free.timeanddate.com/clock/i6nyzz0i/n370" frameborder="0" width="114" height="19"></iframe>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        <!-- Navbar Area -->
+        <div class="newspaper-main-menu" id="stickyMenu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="newspaperNav">
+
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/"><img src="~/img/republic astxov.png" /></a>
+                        </div>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li class="active"><a href="/">Գլխավոր</a></li>
+                                    @*<li>
+                                            <a href="#">Mega Menu</a>
+                                            <div class="megamenu">
+                                                <ul class="single-mega cn-col-4">
+                                                    <li class="title">Catagories</li>
+                                                    <li><a href="index.html">Home</a></li>
+                                                    <li><a href="catagories-post.html">Catagories</a></li>
+                                                    <li><a href="single-post.html">Single Articles</a></li>
+                                                    <li><a href="about.html">About Us</a></li>
+                                                    <li><a href="contact.html">Contact</a></li>
+                                                </ul>
+                                                <ul class="single-mega cn-col-4">
+                                                    <li class="title">Catagories</li>
+                                                    <li><a href="index.html">Home</a></li>
+                                                    <li><a href="catagories-post.html">Catagories</a></li>
+                                                    <li><a href="single-post.html">Single Articles</a></li>
+                                                    <li><a href="about.html">About Us</a></li>
+                                                    <li><a href="contact.html">Contact</a></li>
+                                                </ul>
+                                                <ul class="single-mega cn-col-4">
+                                                    <li class="title">Catagories</li>
+                                                    <li><a href="index.html">Home</a></li>
+                                                    <li><a href="catagories-post.html">Catagories</a></li>
+                                                    <li><a href="single-post.html">Single Articles</a></li>
+                                                    <li><a href="about.html">About Us</a></li>
+                                                    <li><a href="contact.html">Contact</a></li>
+                                                </ul>
+                                                <div class="single-mega cn-col-4">
+                                                    <!-- Single Featured Post -->
+                                                    <div class="single-blog-post small-featured-post d-flex">
+                                                        <div class="post-thumb">
+                                                            <a href="#"><img src="img/bg-img/23.jpg" alt=""></a>
+                                                        </div>
+                                                        <div class="post-data">
+                                                            <a href="#" class="post-catagory">Travel</a>
+                                                            <div class="post-meta">
+                                                                <a href="#" class="post-title">
+                                                                    <h6>Pellentesque mattis arcu massa, nec fringilla turpis eleifend id.</h6>
+                                                                </a>
+                                                                <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Single Featured Post -->
+                                                    <div class="single-blog-post small-featured-post d-flex">
+                                                        <div class="post-thumb">
+                                                            <a href="#"><img src="img/bg-img/24.jpg" alt=""></a>
+                                                        </div>
+                                                        <div class="post-data">
+                                                            <a href="#" class="post-catagory">Politics</a>
+                                                            <div class="post-meta">
+                                                                <a href="#" class="post-title">
+                                                                    <h6>Augue semper congue sit amet ac sapien. Fusce consequat.</h6>
+                                                                </a>
+                                                                <p class="post-date"><span>7:00 AM</span> | <span>April 14</span></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>*@
+                                    @foreach (var item in ViewBag.ParentCategories)
+                                    {
+                                        <li><a href="/Home/Category/@item.Id">@item.Name</a></li>
+                                    }
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+    <!-- ##### Hero Area Start ##### -->
+    <div class="container-fluid">
+        <div class="row">
+            @if (!Request.Browser.IsMobileDevice)
+            {
+                <div class="col-sm-1 left-ad-banner">
+                    <img src="~/img/6009ceacc0394f7c0d80de4144c1f5eb-d539bni.png" />
+                </div>
+            }
+            <div class="col-sm-10">
+                @*<a href="#"><img src="~/img/bg-img/footer-add.gif" alt=""></a>*@
+                <div class="hero-area">
+
+                </div>
+                <!-- ##### Hero Area End ##### -->
+                <!-- ##### Featured Post Area Start ##### -->
+                <div class="featured-post-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-8">
+                                <div class="row" id="main_news">
+                                    @foreach (var item in ViewBag.Recents)
+                                    {
+                                        <!-- Single Featured Post -->
+                                        <div class="col-12 col-lg-6">
+
+                                            <div class="single-blog-post featured-post">
+                                                <div class="post-thumb">
+                                                    <a href="/Home/News/@item.Id"><img src="@item.ImageSource" alt=""></a>
+                                                </div>
+                                                <div class="post-data">
+                                                    <a href="/Home/News/@item.Id" class="post-title">
+                                                        <h6>@item.Name</h6>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-4">
+                                <div class="section-heading" style="margin-bottom:10px!important;">
+                                    <h6>Լրահոս</h6>
+                                </div>
+                                <div id="news-container">
+                                    <!-- Single Featured Post -->
+
+                                    <div id="newsletter-container">
+                                        @Html.Action("RightScrollbar", new { page = 1 })
+                                    </div>
+                                    <input type="button" value="Ավելին․․․" class="btn btn-success" style="width:100%;" onclick="showMore()" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ##### Featured Post Area End ##### -->
+                <!-- ##### Popular News Area Start ##### -->
+                <div class="popular-news-area section-padding-80-50">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-lg-8">
+                                <div class="section-heading">
+                                    <h6 style="padding:0 5px!important">Օրվա ամենաընթերցվածները</h6>
+                                </div>
+
+                                <div class="row">
+                                    @foreach (var item in ViewBag.MostViewed)
+                                    {
+                                        <!-- Single Post -->
+                                        <div class="col-12 col-md-6">
+                                            <div class="single-blog-post style-3">
+                                                <div class="post-thumb">
+                                                    <a href="/Home/News/@item.Id"><img src="@item.ImageSource" alt=""></a>
+                                                </div>
+                                                <div class="post-data">
+                                                    <a href="/Home/News/@item.Id" class="post-catagory">@item.Name</a>
+                                                    @*<a href="/Home/News/@item.Id" class="post-title">
+                                                        <h6>@(item.ContentWithoutHtml().Length > 200 ? item.ContentWithoutHtml().Substring(0, 200) : item.ContentWithoutHtml())</h6>
+                                                    </a>*@
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <div class="popular-news-widget mb-30">
+                                    <h6></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ##### Footer Add Area Start ##### -->
+                @*<div class="footer-add-area">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="footer-add">
+                                        <a href="#"><img src="~/img/bg-img/footer-add.gif" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+                <!-- ##### Footer Add Area End ##### -->
+                <!-- ##### Footer Area Start ##### -->
+                <footer class="footer-area">
+
+                    <!-- Main Footer Area -->
+                    <div class="main-footer-area">
+                        <div class="container">
+                            <div class="row">
+
+                                <!-- Footer Widget Area -->
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                    <div class="footer-widget-area mt-80">
+                                        <!-- Footer Logo -->
+                                        <div class="footer-logo">
+                                            <a href="/"><img src="~/img/republic astxov.png" alt=""></a>
+                                        </div>
+                                        <!-- List -->
+                                        <ul class="list">
+                                            <li>
+                                                Կայքի համահիմնադիր և գործունեության պատասխանատու` Տիգրան Ղազարյան
+                                                <br />Հեռ. +374(91)-88-70-70
+                                                <br />Հասցե` ք. Երևան 
+                                            </li>
+                                            <li><a href="mailto:info@republica.am">info@republica.am</a></li>
+                                            <li><a href="mailto:republica1@gmail.com">republica1@gmail.com</a></li>
+                                            @*<li><a href="tel:+4352782883884">+43 5278 2883 884</a></li>*@
+                                            <li>
+                                                <a href="https://www.facebook.com/republica.am">
+                                                    <img class="social-icon" src="~/img/facebook_circle-512.png" />
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p>
+                                    Սույն կայքում տեղ գտած լրատվական հրապարակումների հեղինակային իրավունքը պատկանում է բացառապես <a href="/">republica.am</a> լրատվական-վերլուծական կայքին։
+                                    Տեղեկատվություն տարածող այլ միջոցներում սույն կայքի հրապարակումների (մասնակի կամ ամբողջական) վերահրապարկաման համար անհրաժեշտ է պատշաճ հղում՝ <a href="/">republica.am</a> կայքին (hyperlink-ի տեսքով)։
+                                </p>
+                                <!-- Footer Widget Area -->
+                                @*<div class="col-12 col-sm-6 col-lg-2">
+                                        <div class="footer-widget-area mt-80">
+                                            <!-- Title -->
+                                            <h4 class="widget-title">Politics</h4>
+                                            <!-- List -->
+                                            <ul class="list">
+                                                <li><a href="#">Business</a></li>
+                                                <li><a href="#">Markets</a></li>
+                                                <li><a href="#">Tech</a></li>
+                                                <li><a href="#">Luxury</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Footer Widget Area -->
+                                    <div class="col-12 col-sm-4 col-lg-2">
+                                        <div class="footer-widget-area mt-80">
+                                            <!-- Title -->
+                                            <h4 class="widget-title">Featured</h4>
+                                            <!-- List -->
+                                            <ul class="list">
+                                                <li><a href="#">Football</a></li>
+                                                <li><a href="#">Golf</a></li>
+                                                <li><a href="#">Tennis</a></li>
+                                                <li><a href="#">Motorsport</a></li>
+                                                <li><a href="#">Horseracing</a></li>
+                                                <li><a href="#">Equestrian</a></li>
+                                                <li><a href="#">Sailing</a></li>
+                                                <li><a href="#">Skiing</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Footer Widget Area -->
+                                    <div class="col-12 col-sm-4 col-lg-2">
+                                        <div class="footer-widget-area mt-80">
+                                            <!-- Title -->
+                                            <h4 class="widget-title">FAQ</h4>
+                                            <!-- List -->
+                                            <ul class="list">
+                                                <li><a href="#">Aviation</a></li>
+                                                <li><a href="#">Business</a></li>
+                                                <li><a href="#">Traveller</a></li>
+                                                <li><a href="#">Destinations</a></li>
+                                                <li><a href="#">Features</a></li>
+                                                <li><a href="#">Food/Drink</a></li>
+                                                <li><a href="#">Hotels</a></li>
+                                                <li><a href="#">Partner Hotels</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Footer Widget Area -->
+                                    <div class="col-12 col-sm-4 col-lg-2">
+                                        <div class="footer-widget-area mt-80">
+                                            <!-- Title -->
+                                            <h4 class="widget-title">+More</h4>
+                                            <!-- List -->
+                                            <ul class="list">
+                                                <li><a href="#">Fashion</a></li>
+                                                <li><a href="#">Design</a></li>
+                                                <li><a href="#">Architecture</a></li>
+                                                <li><a href="#">Arts</a></li>
+                                                <li><a href="#">Autos</a></li>
+                                                <li><a href="#">Luxury</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Footer Area -->
+                    <div class="bottom-footer-area">
+                        <div class="container h-100">
+                            <div class="row h-100 align-items-center">
+                                <div class="col-12">
+
+                                    <p>
+                                        Copyright &copy;
+                                        <script>document.write(new Date().getFullYear());</script> All rights reserved | Powered by <a href="https://web.facebook.com/novirarm/" target="_blank">Novir</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            @if (!Request.Browser.IsMobileDevice)
+            {
+                <div class="col-sm-1 right-ad-banner">
+                    <img src="~/img/6009ceacc0394f7c0d80de4144c1f5eb-d539bni.png" />
+                </div>
+            }
+        </div>
+    </div>
+    <!-- ##### Footer Area Start ##### -->
+    <!-- ##### All Javascript Files ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="~/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="~/js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="~/js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="~/js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="~/js/active.js"></script>
+    @if (!Request.Browser.IsMobileDevice)
+    {
+        <script>
+            $(document).ready(function () {
+                $('#news-container').css('height', $('#main_news').height() + 'px');
+
+            });
+        </script>
+    }
+    <script>
+
+        var rightScrollbarPage = 2;
+        function showMore() {
+            $.ajax({
+                url: '/Home/RightScrollbar?page=' + rightScrollbarPage,
+                type: "GET",
+                success: function (data) {
+                    $('#newsletter-container').append(data);
+                    rightScrollbarPage++;
+                }
+            });
+        }
+    </script>
+    <!--LiveInternet counter-->
+    <script type="text/javascript">
+        document.write("<a href='//www.liveinternet.ru/click' " +
+            "target=_blank><img src='//counter.yadro.ru/hit?t57.6;r" +
+            escape(document.referrer) + ((typeof (screen) == "undefined") ? "" :
+                ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ?
+                    screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) +
+            ";h" + escape(document.title.substring(0, 150)) + ";" + Math.random() +
+            "' alt='' title='LiveInternet' " +
+            "border='0' width='88' height='31'><\/a>")
+    </script><!--/LiveInternet-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135902420-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-135902420-1');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,242 @@
+﻿@{
+    var request = HttpContext.Current.Request;
+    var address = string.Format("{0}://{1}", request.Url.Scheme, request.Url.Authority);
+    var link = address;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>ԿԱՊ | Republica.am</title>
+    <!-- Favicon -->
+    <link rel="icon" href="~/img/core-img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="~/style.css">
+    <link rel="canonical"
+          href="/web/tweet-button">
+</head>
+
+<body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=2293687377516904&autoLogAppEvents=1"></script>
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Top Header Area -->
+        @if (!Request.Browser.IsMobileDevice)
+        {
+            <div class="top-header-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12" style="margin-top: 15px;">
+                            <div class="top-header-content d-flex align-items-center justify-content-between">
+                                <!-- Logo -->
+                                <div class="logo col-sm-3">
+                                    <a href="/">
+                                        <img src="~/img/republic astxov.png" />
+                                    </a>
+                                </div>
+
+                                <div class="logo col-sm-2">
+                                    <!-- weather widget start --><a target="_blank" href="https://www.booked.net/weather/yerevan-19185"><img src="https://w.bookcdn.com/weather/picture/14_19185_1_1_ffffff_118_ffffff_000000_fc0000_0_ffffff_000000_0_6.png?scode=124&domid=w209&anc_id=15358" alt="booked.net" /></a><!-- weather widget end -->
+                                    <iframe src="http://free.timeanddate.com/clock/i6nyzz0i/n370" frameborder="0" width="114" height="19"></iframe>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        <!-- Navbar Area -->
+        <div class="newspaper-main-menu" id="stickyMenu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="newspaperNav">
+
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/"><img src="~/img/republic astxov.png" alt=""></a>
+                        </div>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li class="active"><a href="/">Գլխավոր</a></li>
+
+                                    @foreach (var item in ViewBag.ParentCategories)
+                                    {
+                                        <li><a href="/Home/Category/@item.Id">@item.Name</a></li>
+                                    }
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+    <!-- ##### Hero Area Start ##### -->
+    <div class="container-fluid">
+        <div class="row">
+            @if (!Request.Browser.IsMobileDevice)
+            {
+                <div class="col-sm-1 left-ad-banner">
+                    <img src="~/img/6009ceacc0394f7c0d80de4144c1f5eb-d539bni.png" />
+                </div>
+            }
+            <div class="col-sm-10">
+                <div class="blog-area section-padding-0-80">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-lg-8 " id="main_news">
+                                <div class="blog-posts-area">
+
+                                    <!-- Single Featured Post -->
+                                    <div class="single-blog-post featured-post single-post">
+
+                                        <div class="post-data">
+                                            <a href="#" class="post-title">
+                                                <h6>ԿԱՊ</h6>
+                                            </a>
+                                            <div style="text-align:justify;font-size:20px;">
+                                                <a style="font-size:20px;" href="/">Republica.am</a> լրատվական կայքը գործունեություն է ծավալում պատասխանատու լրագրության` օբյեկտիվության, անաչառության և համակողմանիության սկզբունքների խստագույնս պահպանմամբ։<br />
+                                                Այն հասանելի է շուրջ 440.000 հազար անձանց և տարածվում է ֆեյսբուքյան շուրջ 83 լրատվական էջերով:<br />
+                                                Համագործակցության համար զանգահարել` 094-001-011 հեռախոսահամարով
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ##### Footer Add Area End ##### -->
+                <!-- ##### Footer Area Start ##### -->
+                <footer class="footer-area">
+
+                    <!-- Main Footer Area -->
+                    <div class="main-footer-area">
+                        <div class="container">
+                            <div class="row">
+
+                                <!-- Footer Widget Area -->
+                                <div class="col-12 col-sm-6 col-lg-4">
+                                    <div class="footer-widget-area mt-80">
+                                        <!-- Footer Logo -->
+                                        <div class="footer-logo">
+                                            <a href="/"><img src="~/img/republic astxov.png" alt=""></a>
+                                        </div>
+                                        <!-- List -->
+                                        <ul class="list">
+                                            <li>
+                                                Կայքի համահիմնադիր և գործունեության պատասխանատու` Տիգրան Ղազարյան
+                                                <br />Հեռ. +374(91)-88-70-70
+                                                <br />Հասցե` ք. Երևան 
+                                            </li>
+                                            <li><a href="mailto:info@republica.am">info@republica.am</a></li>
+                                            <li><a href="mailto:republica1@gmail.com">republica1@gmail.com</a></li>
+                                            @*<li><a href="tel:+4352782883884">+43 5278 2883 884</a></li>*@
+                                            <li>
+                                                <a href="https://www.facebook.com/republica.am">
+                                                    <img class="social-icon" src="~/img/facebook_circle-512.png" />
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p>
+                                    Սույն կայքում տեղ գտած լրատվական հրապարակումների հեղինակային իրավունքը պատկանում է բացառապես <a href="/">republica.am</a> լրատվական-վերլուծական կայքին։
+                                    Տեղեկատվություն տարածող այլ միջոցներում սույն կայքի հրապարակումների (մասնակի կամ ամբողջական) վերահրապարկաման համար անհրաժեշտ է պատշաճ հղում՝ <a href="/">republica.am</a> կայքին (hyperlink-ի տեսքով)։
+                                </p>
+                               
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Footer Area -->
+                    <div class="bottom-footer-area">
+                        <div class="container h-100">
+                            <div class="row h-100 align-items-center">
+                                <div class="col-12">
+
+                                    <p>
+                                        Copyright &copy;
+                                        <script>document.write(new Date().getFullYear());</script> All rights reserved | Powered by <a href="https://web.facebook.com/novirarm/" target="_blank">Novir</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            @if (!Request.Browser.IsMobileDevice)
+            {
+                <div class="col-sm-1 right-ad-banner">
+                    <img src="~/img/6009ceacc0394f7c0d80de4144c1f5eb-d539bni.png" />
+                </div>
+            }
+        </div>
+    </div>
+    <!-- ##### Footer Area Start ##### -->
+    <!-- ##### All Javascript Files ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="~/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="~/js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="~/js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="~/js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="~/js/active.js"></script>
+    @if (!Request.Browser.IsMobileDevice)
+    {
+        <script>
+            $(document).ready(function () {
+                $('#news-container').css('height', $('#main_news').height() + 'px');
+
+            });
+        </script>
+    }
+    <script>
+
+        var rightScrollbarPage = 1;
+        function showMore() {
+            $.ajax({
+                url: '/Home/RightScrollbar?page=' + rightScrollbarPage,
+                type: "GET",
+                success: function (data) {
+                    $('#newsletter-container').append(data);
+                    rightScrollbarPage++;
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

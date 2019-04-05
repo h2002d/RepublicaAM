@@ -1,0 +1,19 @@
+﻿@model List<Hirent.Models.Product>
+
+@foreach (var item in Model)
+{
+    <div class="single-blog-post small-featured-post d-flex">
+        <div class="post-thumb">
+            <a href="/Home/News/@item.Id"><img src="@item.ImageSource" alt=""></a>
+        </div>
+        <div class="post-data">
+            <a href="/Home/Category/@item.CategoryId" class="post-catagory">@Hirent.Models.Category.GetCategory(item.CategoryId,false).First().Name</a>
+            <div class="post-meta">
+                <a href="/Home/News/@item.Id" class="post-title">
+                    <h6>@item.Name</h6>
+                </a>
+                <p class="post-date"><span>@item.CreateDate.ToString("dd/MM HH:mm")</span></p>
+            </div>
+        </div>
+    </div>
+}

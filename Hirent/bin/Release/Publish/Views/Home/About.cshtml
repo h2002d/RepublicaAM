@@ -1,0 +1,188 @@
+﻿@model List<Hirent.Models.Product>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="shortcut icon" href="/images/logo.jpg" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/font-awesome/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="/css/font-face.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    @if (Request.Browser.IsMobileDevice)
+    {
+        <style>
+            .close {
+                font-size: 35px !important;
+                width: 100%;
+                text-align: right;
+            }
+        </style>
+    }
+    <style>
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            background: none;
+            border: none;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+    </style>
+    <title>Hirent.am- About</title>
+</head>
+<body>
+
+    <!-- header-place -->
+    <!-- header-place -->
+
+    <header>
+        <div class="header-center">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="/">
+                        <img class="logo-img" src="/images/logo-hirent.png" alt="site-logo" />
+                    </a>
+                </div>
+                <div class="langs">
+                    <!-- Languages -->
+                    <a class="flag_am" href="/Home/ChangeLanguage?lang=am" style="background-image: url(/images/flag_am.png);"></a>
+                    <a class="flag_ru" href="/Home/ChangeLanguage?lang=ru" style="background-image: url(/images/flag_ru.png);"></a>
+                    <a class="flag_en" href="/Home/ChangeLanguage?lang=en" style="background-image: url(/images/flag_en.gif);"></a>
+                    <div class="change_lang_result"></div>
+                </div>
+                <div class="search">
+                    <form action="/Home/Search" id="searchForm" method="get">
+                        <div class="searchContainer">
+                            <i class="fa fa-search searchIcon"></i>
+                            <input class="search-Box" type="search" name="query" id="site-search" placeholder="Search...">
+                        </div>
+                    </form> 
+                </div>
+                <div class="mobile">
+                    <i class="fas fa-mobile-alt" aria-hidden="true"></i><span>096-77-80-77</span><br />
+                    <i class="fas fa-mobile-alt" aria-hidden="true"></i><span>044-77-84-77</span>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <ul class="header-menu">
+                    <li class="menu-item">
+                        <a href="/" class="item-link">@Resource.Home</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/Home/about"  id="active" class="item-link">@Resource.About</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/Home/Contact" class="item-link">@Resource.Contact</a>
+                    </li>
+                </ul>
+                <div class="social">
+                    <a href="https://facebook.com" class="soc-link" target="_blank"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/hirent.am/" class="soc-link" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://hirentarmenia@gmail.com" class="soc-link" target="_blank"><i class="far fa-envelope" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- header-place -->
+    <!-- header-place -->
+    <!-- content-place -->
+    <!-- content-place -->
+
+    <section class="content">
+        <div class="sidebar">
+            <div class="menu-l-hamburger">
+                <div class="menu-l-open-btn">@Resource.Menu<i class="fas fa-bars"></i></div>
+                <div class="menu-l-content">
+                    <ul class="sidebar-menu">
+                        @{
+                            int i = 1;
+                        }
+                        @foreach (Hirent.Models.ParentCategory item in ViewBag.ParentCategories)
+                        {
+                            <li class="sidebar-item-@i" style="border-bottom: 1px solid #000">
+                                <a href="#" class="sidebar-link">@item.Name<i class="fas fa-angle-down"></i></a>
+                                <ul class="submenu-@i" style="display: none">
+                                    @foreach (var child in item.ChildCategories())
+                                    {
+                                        <li><a href="/Home/Category/@child.Id">@child.Name</a></li>
+                                    }
+                                </ul>
+                            </li>
+                            i++;
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="container">
+            @Html.Raw(Resource.AboutContent)
+            </div>
+        </div>
+    </section>
+    <!-- content-place -->
+    <!-- content-place -->
+    <!-- scrolling-to-top -->
+    <!-- scrolling-to-top -->
+
+    <a href="#" id="to-top"><i class="fas fa-chevron-circle-up" aria-hidden="true"></i></a>
+
+    <!-- scrolling-to-top -->
+    <!-- scrolling-to-top -->
+    <!-- footer-place -->
+    <!-- footer-place -->
+
+    <footer>
+        <div class="footer-center">
+            <sapan class="footer-text">© 2019 <i>Hirent.am</i> Powered by <a style="color:#770077;" href="https://www.facebook.com/novirarm/"> Novir </a></sapan>
+            <div class="footer-contact">
+                <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Armenia, Yerevan</span>
+                <span><i class="fas fa-envelope" aria-hidden="true"></i><a class="mail-link" href="https://mail.ru" target="_blank">hirentarmenia@gmail.com</a></span>
+                <span><i class="fas fa-phone-square" aria-hidden="true"></i>+374 96-77-80-77</span>
+                <span><i class="fas fa-phone-square" aria-hidden="true"></i>+374 44-77-84-77</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- footer-place -->
+    <!-- footer-place -->
+
+    <script src="/js/jQuery.js"></script>
+    <script src="/js/init.js"></script>
+</body>
+</html>
